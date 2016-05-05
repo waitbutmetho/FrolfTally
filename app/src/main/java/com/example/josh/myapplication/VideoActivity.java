@@ -19,6 +19,8 @@ public class VideoActivity extends AppCompatActivity implements View.OnClickList
     @Bind(R.id.whatIsDiscGolfBtn) Button mWhatIsDiscGolfBtn;
     @Bind(R.id.howToThrowBackhandBtn) Button mHowToThrowBackhandBtn;
     @Bind(R.id.howToPuttBtn) Button mHowToPuttBtn;
+    @Bind(R.id.howToThrowSidearmBtn) Button mHowToThrowSidearmBtn;
+    @Bind(R.id.howToThrowOverheadBtn) Button mHowToThrowOverheadBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +30,8 @@ public class VideoActivity extends AppCompatActivity implements View.OnClickList
 
         mWhatIsDiscGolfBtn.setOnClickListener(this);
         mHowToThrowBackhandBtn.setOnClickListener(this);
+        mHowToThrowSidearmBtn.setOnClickListener(this);
+        mHowToThrowOverheadBtn.setOnClickListener(this);
         mHowToPuttBtn.setOnClickListener(this);
     }
 
@@ -45,7 +49,15 @@ public class VideoActivity extends AppCompatActivity implements View.OnClickList
                 break;
 
             case R.id.howToThrowBackhandBtn:
-                intent = YouTubeStandalonePlayer.createVideoIntent(this, GOOGLE_API_KEY, YOUTUBE_VIDEO_ID);
+                intent = YouTubeStandalonePlayer.createVideoIntent(this, GOOGLE_API_KEY, "rCs5u9ecVis");
+                break;
+
+            case R.id.howToThrowSidearmBtn:
+                intent = YouTubeStandalonePlayer.createVideoIntent(this, GOOGLE_API_KEY, "x7ewCoZ8BwM");
+                break;
+
+            case R.id.howToThrowOverheadBtn:
+                intent = YouTubeStandalonePlayer.createVideoIntent(this, GOOGLE_API_KEY, "n7ZQbxrr1v8");
                 break;
         }
 

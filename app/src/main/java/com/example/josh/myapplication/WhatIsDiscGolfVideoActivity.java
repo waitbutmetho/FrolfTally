@@ -11,7 +11,7 @@ import com.google.android.youtube.player.YouTubePlayerView;
 public class WhatIsDiscGolfVideoActivity extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener {
 
     private String GOOGLE_API_KEY = "AIzaSyCgpp39acbHjGYieMlUhkBaejHSQYpFCSs";
-    private String YOUTUBE_VIDEO_ID = "TLowvHyhSWU";
+    private String YOUTUBE_VIDEO_ID = "rFvHgfvGhIs";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
