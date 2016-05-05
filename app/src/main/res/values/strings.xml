@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Frolf Tally</string>
+    <string name="title_activity_main22">Main22Activity</string>
+    <string name="title_activity_what_is_disc_golf_video">WhatIsDiscGolfVideoActivity</string>
 </resources>

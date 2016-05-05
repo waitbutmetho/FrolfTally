@@ -19,4 +19,14 @@
         android:layout_centerHorizontal="true"
         android:background="#c8000000"
         android:textColor="#ffffff"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Video Tutuorials"
+        android:id="@+id/discVideosBtn"
+        android:background="#c8000000"
+        android:textColor="#ffffff"
+        android:layout_below="@+id/scoreTrackerBtn"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
