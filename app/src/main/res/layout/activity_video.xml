@@ -7,42 +7,87 @@
     android:background="@drawable/woods">
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Back Home"
+        android:id="@+id/homeBtn"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/custom_transparent_btn"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"/>
+
+    <Button
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="What is Disc Golf?"
         android:id="@+id/whatIsDiscGolfBtn"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+
+        android:layout_below="@+id/homeBtn"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/custom_transparent_btn"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"/>
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="How to Putt"
         android:id="@+id/howToPuttBtn"
         android:layout_below="@+id/whatIsDiscGolfBtn"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/custom_transparent_btn"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"/>
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="How To Throw Backhand"
         android:id="@+id/howToThrowBackhandBtn"
         android:layout_below="@+id/howToPuttBtn"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/custom_transparent_btn"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"/>
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="How To Throw Sidearm"
         android:id="@+id/howToThrowSidearmBtn"
         android:layout_below="@+id/howToThrowBackhandBtn"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/custom_transparent_btn"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"/>
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="How To Throw Overhead"
         android:id="@+id/howToThrowOverheadBtn"
         android:layout_below="@+id/howToThrowSidearmBtn"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/custom_transparent_btn"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"/>
 </RelativeLayout>

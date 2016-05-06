@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Bind(R.id.minusOnePointBtn) Button mMinusOnePointBtn;
     @Bind(R.id.currentHoleView) TextView mCurrentHoleView;
     @Bind(R.id.currentHoleScoreView) TextView mCurrentHoleScoreView;
+    @Bind(R.id.saveRoundBtn) TextView mSaveRoundBtn;
 
 
     @Override
@@ -35,6 +37,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mPreviousHoleBtn.setOnClickListener(this);
         mPlusOnePointBtn.setOnClickListener(this);
         mMinusOnePointBtn.setOnClickListener(this);
+        mSaveRoundBtn.setOnClickListener(this);
     }
 
     @Override
@@ -42,6 +45,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (v == mHomeBtn) {
             Intent intent = new Intent(MainActivity.this, HomeActivity.class);
             startActivity(intent);
+        }
+
+        if (v == mSaveRoundBtn) {
+            Toast.makeText(MainActivity.this, "Game Saved", Toast.LENGTH_SHORT).show();
         }
 
         if (v == mPlusOnePointBtn) {

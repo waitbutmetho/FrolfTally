@@ -21,6 +21,7 @@ public class VideoActivity extends AppCompatActivity implements View.OnClickList
     @Bind(R.id.howToPuttBtn) Button mHowToPuttBtn;
     @Bind(R.id.howToThrowSidearmBtn) Button mHowToThrowSidearmBtn;
     @Bind(R.id.howToThrowOverheadBtn) Button mHowToThrowOverheadBtn;
+    @Bind(R.id.homeBtn) Button mHomeBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +34,7 @@ public class VideoActivity extends AppCompatActivity implements View.OnClickList
         mHowToThrowSidearmBtn.setOnClickListener(this);
         mHowToThrowOverheadBtn.setOnClickListener(this);
         mHowToPuttBtn.setOnClickListener(this);
+        mHomeBtn.setOnClickListener(this);
     }
 
     @Override
@@ -42,6 +44,10 @@ public class VideoActivity extends AppCompatActivity implements View.OnClickList
         switch(v.getId()) {
             case R.id.whatIsDiscGolfBtn:
                 intent = new Intent(VideoActivity.this, WhatIsDiscGolfVideoActivity.class);
+                break;
+
+            case R.id.homeBtn:
+                intent = new Intent(VideoActivity.this, HomeActivity.class);
                 break;
 
             case R.id.howToPuttBtn:

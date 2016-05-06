@@ -14,8 +14,9 @@
         android:layout_above="@+id/holeScoreControls"
         android:layout_centerHorizontal="true"
         android:textSize="30sp"
-        android:background="#c8000000"
-        android:textColor="#ffffff"/>
+        android:background="@drawable/custom_rounded_corners_transparent"
+        android:textColor="#ffffff"
+        android:padding="5dp" />
 
     <Button
         android:layout_width="wrap_content"
@@ -25,8 +26,12 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:background="#c8000000"
-        android:textColor="#ffffff"/>
+        android:background="@drawable/custom_transparent_btn"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -36,8 +41,12 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:background="#c8000000"
-        android:textColor="#ffffff"/>
+        android:background="@drawable/custom_transparent_btn"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -54,8 +63,12 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            android:background="#c8000000"
-            android:textColor="#ffffff"/>
+            android:background="@drawable/custom_transparent_btn"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"/>
 
         <Button
             android:layout_width="wrap_content"
@@ -65,18 +78,26 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:background="#c8000000"
-            android:textColor="#ffffff" />
+            android:background="@drawable/custom_transparent_btn"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/newRoundBtn"
+            android:id="@+id/saveRoundBtn"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:text="New Round"
-            android:background="#c8000000"
-            android:textColor="#ffffff"/>
+            android:text="Save Round"
+            android:background="@drawable/custom_transparent_btn"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"/>
 
     </RelativeLayout>
 
@@ -108,8 +129,12 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:textSize="35sp"
-            android:background="#c8000000"
-            android:textColor="#ffffff"/>
+            android:background="@drawable/custom_transparent_btn"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"/>
 
         <Button
             style="?android:attr/buttonStyleSmall"
@@ -121,8 +146,12 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
             android:textSize="35sp"
-            android:background="#c8000000"
-            android:textColor="#ffffff"/>
+            android:background="@drawable/custom_transparent_btn"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"/>
 
     </RelativeLayout>
 
