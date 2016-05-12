@@ -4,6 +4,8 @@ import android.os.Build;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.josh.myapplication.ui.MainActivity;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

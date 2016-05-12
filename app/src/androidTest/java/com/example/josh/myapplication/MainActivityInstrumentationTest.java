@@ -2,6 +2,8 @@ package com.example.josh.myapplication;
 
 import android.support.test.rule.ActivityTestRule;
 
+import com.example.josh.myapplication.ui.MainActivity;
+
 import org.junit.Rule;
 import org.junit.Test;
 

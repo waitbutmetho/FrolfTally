@@ -1,4 +1,4 @@
-package com.example.josh.myapplication;
+package com.example.josh.myapplication.ui;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +8,14 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.josh.myapplication.Constants;
+import com.example.josh.myapplication.R;
+import com.example.josh.myapplication.models.Game;
+import com.firebase.client.Firebase;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
@@ -15,6 +23,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     String[] holes = {"Hole 1", "Hole 2", "Hole 3", "Hole 4", "Hole 5", "Hole 6", "Hole 7", "Hole 8", "Hole 9", "Hole 10", "Hole 11", "Hole 12", "Hole 13", "Hole 14", "Hole 15", "Hole 16", "Hole 17", "Hole 18"};
     int holeCounter = 0;
     int holeScoreCounter = 0;
+
+
+    ArrayList<Integer> holeScores = new ArrayList<>();
+    int totalScore = 50;
+    String gameName = "Game Name";
+
+
     public static final String TAG = MainActivity.class.getSimpleName();
     @Bind(R.id.homeBtn) Button mHomeBtn;
     @Bind(R.id.previousHoleBtn) Button mPreviousHoleBtn;
@@ -31,6 +46,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+        holeScores.add(1);
+        holeScores.add(2);
+        holeScores.add(3);
+        holeScores.add(4);
+        holeScores.add(5);
+        holeScores.add(6);
+        holeScores.add(7);
+        holeScores.add(8);
+        holeScores.add(9);
+        holeScores.add(10);
+        holeScores.add(11);
+        holeScores.add(12);
+        holeScores.add(13);
+        holeScores.add(14);
+        holeScores.add(15);
+        holeScores.add(16);
+        holeScores.add(17);
+        holeScores.add(18);
 
         mHomeBtn.setOnClickListener(this);
         mNextHoleBtn.setOnClickListener(this);
@@ -48,6 +81,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         if (v == mSaveRoundBtn) {
+            Game mGame = new Game(gameName, holeScores, totalScore);
+            Firebase ref = new Firebase(Constants.FIREBASE_URL_GAMES);
+            ref.push().setValue(mGame);
             Toast.makeText(MainActivity.this, "Game Saved", Toast.LENGTH_SHORT).show();
         }
 

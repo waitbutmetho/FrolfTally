@@ -1,8 +1,9 @@
-package com.example.josh.myapplication;
+package com.example.josh.myapplication.ui;
 
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.example.josh.myapplication.R;
 import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
