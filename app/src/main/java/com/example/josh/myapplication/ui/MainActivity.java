@@ -90,6 +90,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         if (v == mSaveRoundBtn) {
+            totalScore = holeScores.get(0) +holeScores.get(1) +holeScores.get(2) +holeScores.get(3) +holeScores.get(4) +holeScores.get(5) +holeScores.get(6) +holeScores.get(7) +holeScores.get(8) +holeScores.get(9) +holeScores.get(10) +holeScores.get(11) +holeScores.get(12) +holeScores.get(13) +holeScores.get(14) +holeScores.get(15) +holeScores.get(16) +holeScores.get(17);
+
             Game mGame = new Game(gameName, holeScores, totalScore);
             String userUid = mSharedPreferences.getString(Constants.KEY_UID, null);
             Firebase userGamesFirebaseRef = new Firebase(Constants.FIREBASE_URL_GAMES).child(userUid);
