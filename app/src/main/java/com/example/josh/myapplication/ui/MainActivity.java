@@ -9,15 +9,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.example.josh.myapplication.Constants;
 import com.example.josh.myapplication.R;
 import com.example.josh.myapplication.models.Game;
 import com.firebase.client.Firebase;
-
 import java.util.ArrayList;
-import java.util.List;
-
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
@@ -33,6 +29,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     ArrayList<Integer> holeScores = new ArrayList<>();
     int totalScore = 50;
     String gameName = "Game Name";
+    String courseName = "Milo";
+    int gameRating = 5;
 
 
     public static final String TAG = MainActivity.class.getSimpleName();
@@ -92,7 +90,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (v == mSaveRoundBtn) {
             totalScore = holeScores.get(0) +holeScores.get(1) +holeScores.get(2) +holeScores.get(3) +holeScores.get(4) +holeScores.get(5) +holeScores.get(6) +holeScores.get(7) +holeScores.get(8) +holeScores.get(9) +holeScores.get(10) +holeScores.get(11) +holeScores.get(12) +holeScores.get(13) +holeScores.get(14) +holeScores.get(15) +holeScores.get(16) +holeScores.get(17);
 
-            Game mGame = new Game(gameName, holeScores, totalScore);
+            Game mGame = new Game(gameName, courseName, totalScore, gameRating, holeScores);
             String userUid = mSharedPreferences.getString(Constants.KEY_UID, null);
             Firebase userGamesFirebaseRef = new Firebase(Constants.FIREBASE_URL_GAMES).child(userUid);
             Firebase pushRef = userGamesFirebaseRef.push();
@@ -103,121 +101,91 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         if (v == mPlusOnePointBtn) {
-            if(holeScoreCounter < 10 && holeScoreCounter > -1) {
+            if(holeScoreCounter < 9 && holeScoreCounter > -1) {
                 holeScoreCounter = Integer.parseInt(mCurrentHoleScoreView.getText().toString());
                 holeScoreCounter++;
                 mCurrentHoleScoreView.setText(Integer.toString(holeScoreCounter));
+                scoreHolder = Integer.parseInt(mCurrentHoleScoreView.getText().toString());
+                holeScores.set(holeCounter, scoreHolder);
             }
         }
 
         if (v == mMinusOnePointBtn) {
-            if(holeScoreCounter < 11 && holeScoreCounter > 0) {
+            if(holeScoreCounter < 10 && holeScoreCounter > 0) {
                 holeScoreCounter = Integer.parseInt(mCurrentHoleScoreView.getText().toString());
                 holeScoreCounter--;
                 mCurrentHoleScoreView.setText(Integer.toString(holeScoreCounter));
+                scoreHolder = Integer.parseInt(mCurrentHoleScoreView.getText().toString());
+                holeScores.set(holeCounter, scoreHolder);
             }
         }
 
         if (v == mNextHoleBtn) {
            if(holeCounter == 0) {
-               scoreHolder = Integer.parseInt(mCurrentHoleScoreView.getText().toString());
-               holeScores.set(0, scoreHolder);
                mCurrentHoleView.setText(holes[1]);
                mCurrentHoleScoreView.setText(holeScores.get(1).toString());
                holeCounter++;
            } else if(holeCounter == 1){
-               scoreHolder = Integer.parseInt(mCurrentHoleScoreView.getText().toString());
-               holeScores.set(1, scoreHolder);
                mCurrentHoleView.setText(holes[2]);
                mCurrentHoleScoreView.setText(holeScores.get(2).toString());
                holeCounter++;
            } else if(holeCounter == 2){
-               scoreHolder = Integer.parseInt(mCurrentHoleScoreView.getText().toString());
-               holeScores.set(2, scoreHolder);
                mCurrentHoleView.setText(holes[3]);
                mCurrentHoleScoreView.setText(holeScores.get(3).toString());
                holeCounter++;
            } else if(holeCounter == 3){
-               scoreHolder = Integer.parseInt(mCurrentHoleScoreView.getText().toString());
-               holeScores.set(3, scoreHolder);
                mCurrentHoleView.setText(holes[4]);
                mCurrentHoleScoreView.setText(holeScores.get(4).toString());
                holeCounter++;
            } else if(holeCounter == 4){
-               scoreHolder = Integer.parseInt(mCurrentHoleScoreView.getText().toString());
-               holeScores.set(4, scoreHolder);
                mCurrentHoleView.setText(holes[5]);
                mCurrentHoleScoreView.setText(holeScores.get(5).toString());
                holeCounter++;
            }else if(holeCounter == 5){
-               scoreHolder = Integer.parseInt(mCurrentHoleScoreView.getText().toString());
-               holeScores.set(5, scoreHolder);
                mCurrentHoleView.setText(holes[6]);
                mCurrentHoleScoreView.setText(holeScores.get(6).toString());
                holeCounter++;
            }else if(holeCounter == 6){
-               scoreHolder = Integer.parseInt(mCurrentHoleScoreView.getText().toString());
-               holeScores.set(6, scoreHolder);
                mCurrentHoleView.setText(holes[7]);
                mCurrentHoleScoreView.setText(holeScores.get(7).toString());
                holeCounter++;
            }else if(holeCounter == 7){
-               scoreHolder = Integer.parseInt(mCurrentHoleScoreView.getText().toString());
-               holeScores.set(7, scoreHolder);
                mCurrentHoleView.setText(holes[8]);
                mCurrentHoleScoreView.setText(holeScores.get(8).toString());
                holeCounter++;
            }else if(holeCounter == 8){
-               scoreHolder = Integer.parseInt(mCurrentHoleScoreView.getText().toString());
-               holeScores.set(8, scoreHolder);
                mCurrentHoleView.setText(holes[9]);
                mCurrentHoleScoreView.setText(holeScores.get(9).toString());
                holeCounter++;
            }else if(holeCounter == 9){
-               scoreHolder = Integer.parseInt(mCurrentHoleScoreView.getText().toString());
-               holeScores.set(9, scoreHolder);
                mCurrentHoleView.setText(holes[10]);
                mCurrentHoleScoreView.setText(holeScores.get(10).toString());
                holeCounter++;
            }else if(holeCounter == 10){
-               scoreHolder = Integer.parseInt(mCurrentHoleScoreView.getText().toString());
-               holeScores.set(10, scoreHolder);
                mCurrentHoleView.setText(holes[11]);
                mCurrentHoleScoreView.setText(holeScores.get(11).toString());
                holeCounter++;
            }else if(holeCounter == 11){
-               scoreHolder = Integer.parseInt(mCurrentHoleScoreView.getText().toString());
-               holeScores.set(11, scoreHolder);
                mCurrentHoleView.setText(holes[12]);
                mCurrentHoleScoreView.setText(holeScores.get(12).toString());
                holeCounter++;
            }else if(holeCounter == 12){
-               scoreHolder = Integer.parseInt(mCurrentHoleScoreView.getText().toString());
-               holeScores.set(12, scoreHolder);
                mCurrentHoleView.setText(holes[13]);
                mCurrentHoleScoreView.setText(holeScores.get(13).toString());
                holeCounter++;
            }else if(holeCounter == 13){
-               scoreHolder = Integer.parseInt(mCurrentHoleScoreView.getText().toString());
-               holeScores.set(13, scoreHolder);
                mCurrentHoleView.setText(holes[14]);
                mCurrentHoleScoreView.setText(holeScores.get(14).toString());
                holeCounter++;
            }else if(holeCounter == 14){
-               scoreHolder = Integer.parseInt(mCurrentHoleScoreView.getText().toString());
-               holeScores.set(14, scoreHolder);
                mCurrentHoleView.setText(holes[15]);
                mCurrentHoleScoreView.setText(holeScores.get(15).toString());
                holeCounter++;
            }else if(holeCounter == 15){
-               scoreHolder = Integer.parseInt(mCurrentHoleScoreView.getText().toString());
-               holeScores.set(15, scoreHolder);
                mCurrentHoleView.setText(holes[16]);
                mCurrentHoleScoreView.setText(holeScores.get(16).toString());
                holeCounter++;
            }else if(holeCounter == 16){
-               scoreHolder = Integer.parseInt(mCurrentHoleScoreView.getText().toString());
-               holeScores.set(16, scoreHolder);
                mCurrentHoleView.setText(holes[17]);
                mCurrentHoleScoreView.setText(holeScores.get(17).toString());
                holeCounter++;
@@ -227,104 +195,70 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
            if(holeCounter == 0) {
 
            } else if(holeCounter == 1){
-               scoreHolder = Integer.parseInt(mCurrentHoleScoreView.getText().toString());
-               holeScores.set(1, scoreHolder);
                mCurrentHoleView.setText(holes[0]);
                mCurrentHoleScoreView.setText(holeScores.get(0).toString());
                holeCounter--;
            } else if(holeCounter == 2){
-               scoreHolder = Integer.parseInt(mCurrentHoleScoreView.getText().toString());
-               holeScores.set(2, scoreHolder);
                mCurrentHoleView.setText(holes[1]);
                mCurrentHoleScoreView.setText(holeScores.get(1).toString());
                holeCounter--;
            } else if(holeCounter == 3){
-               scoreHolder = Integer.parseInt(mCurrentHoleScoreView.getText().toString());
-               holeScores.set(3, scoreHolder);
                mCurrentHoleView.setText(holes[2]);
                mCurrentHoleScoreView.setText(holeScores.get(2).toString());
                holeCounter--;
            } else if(holeCounter == 4){
-               scoreHolder = Integer.parseInt(mCurrentHoleScoreView.getText().toString());
-               holeScores.set(4, scoreHolder);
                mCurrentHoleView.setText(holes[3]);
                mCurrentHoleScoreView.setText(holeScores.get(3).toString());
                holeCounter--;
            }else if(holeCounter == 5){
-               scoreHolder = Integer.parseInt(mCurrentHoleScoreView.getText().toString());
-               holeScores.set(5, scoreHolder);
                mCurrentHoleView.setText(holes[4]);
                mCurrentHoleScoreView.setText(holeScores.get(4).toString());
                holeCounter--;
            }else if(holeCounter == 6){
-               scoreHolder = Integer.parseInt(mCurrentHoleScoreView.getText().toString());
-               holeScores.set(6, scoreHolder);
                mCurrentHoleView.setText(holes[5]);
                mCurrentHoleScoreView.setText(holeScores.get(5).toString());
                holeCounter--;
            }else if(holeCounter == 7){
-               scoreHolder = Integer.parseInt(mCurrentHoleScoreView.getText().toString());
-               holeScores.set(7, scoreHolder);
                mCurrentHoleView.setText(holes[6]);
                mCurrentHoleScoreView.setText(holeScores.get(6).toString());
                holeCounter--;
            }else if(holeCounter == 8){
-               scoreHolder = Integer.parseInt(mCurrentHoleScoreView.getText().toString());
-               holeScores.set(8, scoreHolder);
                mCurrentHoleView.setText(holes[7]);
                mCurrentHoleScoreView.setText(holeScores.get(7).toString());
                holeCounter--;
            }else if(holeCounter == 9){
-               scoreHolder = Integer.parseInt(mCurrentHoleScoreView.getText().toString());
-               holeScores.set(9, scoreHolder);
                mCurrentHoleView.setText(holes[8]);
                mCurrentHoleScoreView.setText(holeScores.get(8).toString());
                holeCounter--;
            }else if(holeCounter == 10){
-               scoreHolder = Integer.parseInt(mCurrentHoleScoreView.getText().toString());
-               holeScores.set(10, scoreHolder);
                mCurrentHoleView.setText(holes[9]);
                mCurrentHoleScoreView.setText(holeScores.get(9).toString());
                holeCounter--;
            }else if(holeCounter == 11){
-               scoreHolder = Integer.parseInt(mCurrentHoleScoreView.getText().toString());
-               holeScores.set(11, scoreHolder);
                mCurrentHoleView.setText(holes[10]);
                mCurrentHoleScoreView.setText(holeScores.get(10).toString());
                holeCounter--;
            }else if(holeCounter == 12){
-               scoreHolder = Integer.parseInt(mCurrentHoleScoreView.getText().toString());
-               holeScores.set(12, scoreHolder);
                mCurrentHoleView.setText(holes[11]);
                mCurrentHoleScoreView.setText(holeScores.get(11).toString());
                holeCounter--;
            }else if(holeCounter == 13){
-               scoreHolder = Integer.parseInt(mCurrentHoleScoreView.getText().toString());
-               holeScores.set(13, scoreHolder);
                mCurrentHoleView.setText(holes[12]);
                mCurrentHoleScoreView.setText(holeScores.get(12).toString());
                holeCounter--;
            }else if(holeCounter == 14){
-               scoreHolder = Integer.parseInt(mCurrentHoleScoreView.getText().toString());
-               holeScores.set(14, scoreHolder);
                mCurrentHoleView.setText(holes[13]);
                mCurrentHoleScoreView.setText(holeScores.get(13).toString());
                holeCounter--;
            }else if(holeCounter == 15){
-               scoreHolder = Integer.parseInt(mCurrentHoleScoreView.getText().toString());
-               holeScores.set(15, scoreHolder);
                mCurrentHoleView.setText(holes[14]);
                mCurrentHoleScoreView.setText(holeScores.get(14).toString());
                holeCounter--;
            }else if(holeCounter == 16){
-               scoreHolder = Integer.parseInt(mCurrentHoleScoreView.getText().toString());
-               holeScores.set(16, scoreHolder);
                mCurrentHoleView.setText(holes[15]);
                mCurrentHoleScoreView.setText(holeScores.get(15).toString());
                holeCounter--;
            }else if(holeCounter == 17){
-               scoreHolder = Integer.parseInt(mCurrentHoleScoreView.getText().toString());
-               holeScores.set(17, scoreHolder);
                mCurrentHoleView.setText(holes[16]);
                mCurrentHoleScoreView.setText(holeScores.get(16).toString());
                holeCounter--;

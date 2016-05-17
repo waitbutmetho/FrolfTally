@@ -10,17 +10,20 @@ import java.util.List;
 @Parcel
 public class Game {
     String gameName;
+    String courseName;
     List<Integer> holeScores = new ArrayList<>();
     int totalScore;
+    int gameRating;
     private String pushId;
-
 
     public Game() {}
 
-public Game(String gameName, ArrayList<Integer> holeScores, int totalScore) {
+public Game(String gameName, String courseName, int totalScore, int gameRating, ArrayList<Integer> holeScores) {
     this.gameName = gameName;
     this.holeScores = holeScores;
     this.totalScore = totalScore;
+    this.gameRating = gameRating;
+    this.courseName = courseName;
     }
 
     public String getGameName() {
@@ -41,5 +44,12 @@ public Game(String gameName, ArrayList<Integer> holeScores, int totalScore) {
 
     public void setPushId(String pushId) {
         this.pushId = pushId;
+    }
+
+    public String getCourseName() {
+        return courseName;
+    }
+    public int getGameRating() {
+        return gameRating;
     }
 }
