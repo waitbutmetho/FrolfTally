@@ -11,25 +11,22 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.MainActivity">
-
-        </activity>
+        <activity android:name=".ui.MainActivity"></activity>
         <activity android:name=".ui.HomeActivity" />
         <activity android:name=".ui.VideoActivity" />
         <activity
             android:name=".ui.WhatIsDiscGolfVideoActivity"
             android:label="@string/title_activity_what_is_disc_golf_video"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".ui.CreateAccountActivity" />
         <activity android:name=".ui.LoginActivity">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
+
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
-
         </activity>
+        <activity android:name=".ui.SavedGameListActivity"></activity>
     </application>
 
 </manifest>

@@ -25,8 +25,9 @@ public class GameViewHolder extends RecyclerView.ViewHolder {
     @Bind(R.id.discImageView) ImageView mDiscImageView;
     @Bind(R.id.roundNameTextView) TextView mRoundNameTextView;
     @Bind(R.id.courseNameTextView) TextView mCourseNameTextView;
-    @Bind(R.id.ratingBar) TextView mRatingBar;
+    @Bind(R.id.ratingTextView) TextView mRatingTextView;
     @Bind(R.id.holeScoresTextView) TextView mHoleScoresTextView;
+    @Bind(R.id.totalScoreTextView) TextView mTotalScoreTextView;
 
     private Context mContext;
     private ArrayList<Game> mGames = new ArrayList<>();
@@ -51,8 +52,9 @@ public class GameViewHolder extends RecyclerView.ViewHolder {
     public void bindGame(Game game) {
         mRoundNameTextView.setText(game.getGameName());
         mCourseNameTextView.setText(game.getCourseName());
-        mRatingBar.setText(game.getGameRating());
+        mRatingTextView.setText("Rating: "+game.getGameRating()+ "/10");
         mHoleScoresTextView.setText(formatHoleScores(game));
+        mTotalScoreTextView.setText("Total: " + game.getTotalScore());
     }
 
     public String formatHoleScores(Game game) {

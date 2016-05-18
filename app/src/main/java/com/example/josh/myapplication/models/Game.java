@@ -49,6 +49,7 @@ public Game(String gameName, String courseName, int totalScore, int gameRating, 
     public String getCourseName() {
         return courseName;
     }
+
     public int getGameRating() {
         return gameRating;
     }

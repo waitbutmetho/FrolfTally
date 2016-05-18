@@ -28,13 +28,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     ArrayList<Integer> holeScores = new ArrayList<>();
     int totalScore = 50;
-    String gameName = "Game Name";
+    String gameName = "Date/Game Name";
     String courseName = "Milo";
     int gameRating = 5;
 
 
     public static final String TAG = MainActivity.class.getSimpleName();
-
+    @Bind(R.id.myRoundsBtn) Button mMyRoundsBtn;
     @Bind(R.id.homeBtn) Button mHomeBtn;
     @Bind(R.id.previousHoleBtn) Button mPreviousHoleBtn;
     @Bind(R.id.nextHoleBtn) Button mNextHoleBtn;
@@ -78,12 +78,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mPlusOnePointBtn.setOnClickListener(this);
         mMinusOnePointBtn.setOnClickListener(this);
         mSaveRoundBtn.setOnClickListener(this);
+        mMyRoundsBtn.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         if (v == mHomeBtn) {
             Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+            startActivity(intent);
+        }
+        if (v == mMyRoundsBtn) {
+            Intent intent = new Intent(MainActivity.this, SavedGameListActivity.class);
             startActivity(intent);
         }
 
