@@ -45,6 +45,9 @@ public class SavedGameListActivity extends AppCompatActivity {
 
     private void setUpRecyclerView() {
         mAdapter = new FirebaseGameListAdapter(mQuery, Game.class);
+        final LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        linearLayoutManager.setReverseLayout(true);
+        linearLayoutManager.setStackFromEnd(false);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setAdapter(mAdapter);
     }
