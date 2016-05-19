@@ -1,5 +1,6 @@
 package com.example.josh.myapplication.ui;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
@@ -7,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.example.josh.myapplication.Constants;
@@ -93,16 +95,50 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         if (v == mSaveRoundBtn) {
-            totalScore = holeScores.get(0) +holeScores.get(1) +holeScores.get(2) +holeScores.get(3) +holeScores.get(4) +holeScores.get(5) +holeScores.get(6) +holeScores.get(7) +holeScores.get(8) +holeScores.get(9) +holeScores.get(10) +holeScores.get(11) +holeScores.get(12) +holeScores.get(13) +holeScores.get(14) +holeScores.get(15) +holeScores.get(16) +holeScores.get(17);
+            final Dialog dialog = new Dialog(MainActivity.this);
+            dialog.setContentView(R.layout.save_round_dialog_box);
+            dialog.show();
 
-            Game mGame = new Game(gameName, courseName, totalScore, gameRating, holeScores);
-            String userUid = mSharedPreferences.getString(Constants.KEY_UID, null);
-            Firebase userGamesFirebaseRef = new Firebase(Constants.FIREBASE_URL_GAMES).child(userUid);
-            Firebase pushRef = userGamesFirebaseRef.push();
-            String gamePushId = pushRef.getKey();
-            mGame.setPushId(gamePushId);
-            pushRef.setValue(mGame);
-            Toast.makeText(MainActivity.this, "Game Saved", Toast.LENGTH_SHORT).show();
+            final EditText nameDateEditText = (EditText) dialog.findViewById(R.id.nameDateEditText);
+            final EditText courseNameEditText = (EditText) dialog.findViewById(R.id.courseNameEditText);
+            final EditText roundRatingDialogEditText = (EditText) dialog.findViewById(R.id.roundRatingDialogEditText);
+            Button saveGameDialogBtn = (Button) dialog.findViewById(R.id.saveRoundDialogBtn);
+            Button cancelDialogBtn = (Button) dialog.findViewById(R.id.cancelDialogBtn);
+
+            saveGameDialogBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    String dialogNameDate = nameDateEditText.getText().toString();
+                    String dialogCourseName = courseNameEditText.getText().toString();
+                    Integer dialogRating = Integer.parseInt(roundRatingDialogEditText.getText().toString());
+
+                    gameName = dialogNameDate;
+                    courseName = dialogCourseName;
+                    gameRating = dialogRating;
+
+                    totalScore = holeScores.get(0) +holeScores.get(1) +holeScores.get(2) +holeScores.get(3) +holeScores.get(4) +holeScores.get(5) +holeScores.get(6) +holeScores.get(7) +holeScores.get(8) +holeScores.get(9) +holeScores.get(10) +holeScores.get(11) +holeScores.get(12) +holeScores.get(13) +holeScores.get(14) +holeScores.get(15) +holeScores.get(16) +holeScores.get(17);
+
+                    Game mGame = new Game(gameName, courseName, totalScore, gameRating, holeScores);
+                    String userUid = mSharedPreferences.getString(Constants.KEY_UID, null);
+                    Firebase userGamesFirebaseRef = new Firebase(Constants.FIREBASE_URL_GAMES).child(userUid);
+                    Firebase pushRef = userGamesFirebaseRef.push();
+                    String gamePushId = pushRef.getKey();
+                    mGame.setPushId(gamePushId);
+                    pushRef.setValue(mGame);
+                    dialog.cancel();
+                    Toast.makeText(MainActivity.this, "Game Saved", Toast.LENGTH_LONG).show();
+                }
+            });
+
+            cancelDialogBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    dialog.cancel();
+                    Toast.makeText(MainActivity.this, "Game Not Saved", Toast.LENGTH_LONG).show();
+                }
+            });
+
+
         }
 
         if (v == mPlusOnePointBtn) {

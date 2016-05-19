@@ -95,6 +95,7 @@
                     android:background="@drawable/custom_transparent_btn"
                     android:layout_weight="1"
                     android:padding="30dp"
+                    android:textColor="#FFFFFF"
                     android:layout_margin="3dp"/>
 
                 <Button
@@ -104,6 +105,7 @@
                     android:id="@+id/cancelDialogBtn"
                     android:background="@drawable/custom_rounded_corners_transparent"
                     android:padding="30dp"
+                    android:textColor="#FFFFFF"
                     android:layout_margin="3dp"/>
             </TableRow>
         </RelativeLayout>
